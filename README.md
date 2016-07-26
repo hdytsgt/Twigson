@@ -9,7 +9,6 @@ A Craft CMS Twig Extension for reading JSON local file or directly through URL.
 
 2. Install the plugin through Control Panel under `Settings > Plugins`
 
-   ​
 
 ## Usage
 
@@ -39,7 +38,7 @@ A Craft CMS Twig Extension for reading JSON local file or directly through URL.
 
    For now, your environment need to have [allow_url_fopen](http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen) to on.
 
-
+   
 
 
 ## License
