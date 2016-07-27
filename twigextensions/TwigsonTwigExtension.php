@@ -40,9 +40,7 @@ class TwigsonTwigExtension extends \Twig_Extension
 	 * Add Twigson functionality into filter
 	 *
 	 * @param  Array  $context
-	 * @param  Int    $currentIndex
-	 * @param  Mixed  $cases
-	 * @param  String $return
+	 * @param  String $path
 	 * 
 	 * @return Mixed
 	 */
