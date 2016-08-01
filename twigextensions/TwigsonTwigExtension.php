@@ -46,10 +46,36 @@ class TwigsonTwigExtension extends \Twig_Extension
 	 */
 	public function twigsonFilter( $context, $path ) 
 	{
-
 		if( $path ) 
 		{
-			$json = @file_get_contents( $path );
+			$check = parse_url( $path );
+			$json  = @file_get_contents( $path );
+
+			if( $json === FALSE )
+			{
+				if( is_callable( 'curl_init' ) && array_key_exists( 'host', $check ) )
+				{
+					$curl = curl_init();
+
+					curl_setopt( $curl, CURLOPT_AUTOREFERER, TRUE );
+					curl_setopt( $curl, CURLOPT_HEADER, 0 );
+					curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+					curl_setopt( $curl, CURLOPT_URL, $path );
+					curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, TRUE );       
+
+					$json = curl_exec( $curl );
+				    
+				    curl_close( $curl );
+			    }
+
+			    if( !array_key_exists( 'host', $check ) )
+			    {
+			    	$open = fopen( $path, 'r' );
+			    	$json = fread( $open, filesize( $path ) );
+
+			    	fclose( $open );
+			    }
+			}
 
 			return ( $json ) ? json_decode( $json, true ) : [];
 		}
