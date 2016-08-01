@@ -18,7 +18,9 @@ A Craft CMS Twig Extension for reading JSON local file or directly through URL.
    {% set json = './countries.json' | twigson %}
 
    {% for key, item in json %}
+
       {{ key }} : {{ item }}
+      
    {% endfor %}
    ```
 
@@ -32,13 +34,14 @@ A Craft CMS Twig Extension for reading JSON local file or directly through URL.
    {% set json = 'http://yoursite.com/countries.json' | twigson %}
 
    {% for key, item in json %}
+
       {{ key }} : {{ item }}
+      
    {% endfor %}
    ```
 
-   For now, your environment need to have [allow_url_fopen](http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen) to on.
+   ​
 
-   
 
 
 ## License
