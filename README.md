@@ -1,6 +1,6 @@
 # Twigson
 
-A Craft CMS Twig Extension for reading JSON local file or directly through URL.
+A Craft CMS Twig Extension for reading local JSON file or directly through URL.
 
 
 
@@ -12,7 +12,7 @@ A Craft CMS Twig Extension for reading JSON local file or directly through URL.
 
 ## Usage
 
-1. Using JSON local file :
+1. Using local JSON file :
 
    ```twig
    {% set json = './countries.json' | twigson %}
