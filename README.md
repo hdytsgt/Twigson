@@ -43,6 +43,11 @@ A Craft CMS Twig Extension for reading local JSON file or directly through URL.
    ​
 
 
+## Related Project
+
+[TwigsonBundle for Symfony](https://github.com/hdytsgt/TwigsonBundle)
+
+
 
 ## License
 
